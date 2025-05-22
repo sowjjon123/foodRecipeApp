@@ -43,10 +43,14 @@ li a:hover{
   color:black;
 }
 
-li .login{
-  font-size: 16px;
-  font-weight: 500;
+.login {
+  color: red !important;
+  background-color: yellow !important;
 }
+
+
+
+
 
 header h2{
   margin-left: 1rem;
@@ -116,12 +120,14 @@ section{
   margin-bottom:5px;
   font-size: 15px;
   font-weight:500;
+  color: black;
 }
 
 .card-body .icons{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: red;
 }
 
 .card-body .timer{
@@ -130,6 +136,7 @@ section{
   gap:2px;
   font-size: 13px;
   font-weight: 500;
+  color: black;
 }
 
 .action{
