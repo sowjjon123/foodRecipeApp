@@ -13,7 +13,7 @@ export default function AddFoodRecipe() {
     e.preventDefault();
     console.log(recipeData);
     try {
-        await axios.post("https://foodrecipeapp-frontend.onrender.com/recipe", recipeData, {
+        await axios.post("https://foodrecipeapp-oe6u.onrender.com/recipe", recipeData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'authorization': 'Bearer ' + localStorage.getItem("token")
