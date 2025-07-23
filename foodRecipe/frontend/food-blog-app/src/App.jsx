@@ -11,7 +11,7 @@ import RecipeDetails from './pages/RecipeDetails'
 
 const getAllRecipes=async()=>{
   let allRecipes=[]
-  await axios.get('http://https://foodrecipeapp-1.onrender.com/recipe').then(res=>{
+  await axios.get('http://localhost:5000/recipe').then(res=>{
     allRecipes=res.data
   })
   return allRecipes
@@ -29,10 +29,10 @@ const getFavRecipes=()=>{
 
 const getRecipe=async({params})=>{
   let recipe;
-  await axios.get(`http://https://foodrecipeapp-1.onrender.com/recipe/${params.id}`)
+  await axios.get(`https://foodrecipeapp-frontend.onrender.com/recipe/${params.id}`)
   .then(res=>recipe=res.data)
 
-  await axios.get(`http://https://foodrecipeapp-1.onrender.com/user/${recipe.createdBy}`)
+  await axios.get(`https://foodrecipeapp-frontend.onrender.com/user/${recipe.createdBy}`)
   .then(res=>{
     recipe={...recipe,email:res.data.email}
   })

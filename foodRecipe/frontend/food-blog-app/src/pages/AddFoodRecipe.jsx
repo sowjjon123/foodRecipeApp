@@ -10,16 +10,21 @@ export default function AddFoodRecipe() {
         setRecipeData(pre => ({ ...pre, [e.target.name]: val }))
     }
     const onHandleSubmit = async (e) => {
-        e.preventDefault()
-        console.log(recipeData)
-        await axios.post("http://https://foodrecipeapp-1.onrender.com/recipe", recipeData,{
-            headers:{
-                'Content-Type':'multipart/form-data',
-                'authorization':'bearer '+localStorage.getItem("token")
+    e.preventDefault();
+    console.log(recipeData);
+    try {
+        await axios.post("https://foodrecipeapp-frontend.onrender.com/recipe", recipeData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                'authorization': 'Bearer ' + localStorage.getItem("token")
             }
-        })
-            .then(() => navigate("/"))
+        });
+        navigate("/");
+    } catch (error) {
+        // Log the error to the console for debugging purposes
+        console.error("Error submitting recipe:", error);
     }
+}
     return (
         <>
             <div className='container'>
